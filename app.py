@@ -82,7 +82,7 @@ def shorten():
     conn.commit()
     conn.close()
 
-    short_url = f"http://st/{short_code}"
+    short_url = f"http://localhost:5000/{short_code}"
     return jsonify({'short_url': short_url, 'short_code': short_code})
 
 @app.route('/<short_code>')
