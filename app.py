@@ -9,11 +9,13 @@ from datetime import datetime
 app = Flask(__name__)
 app.secret_key = 'Khizar@Dev2024'
 
+import os
 DB_CONFIG = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': 'root1234',
-    'database': 'khizar_portfolio'
+    'host': os.environ.get('MYSQL_HOST'),
+    'user': os.environ.get('MYSQL_USER'),
+    'password': os.environ.get('MYSQL_PASSWORD'),
+    'database': os.environ.get('MYSQL_DATABASE'),
+    'port': int(os.environ.get('MYSQL_PORT', 3306))
 }
 
 def get_db():
