@@ -1,7 +1,4 @@
-# ============================================
-# Project 6: URL Shortener with Analytics
-# ============================================
-
+# URL SHORTENER
 from flask import Flask, render_template, request, jsonify, redirect
 import mysql.connector
 from mysql.connector import Error
