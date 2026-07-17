@@ -15,11 +15,11 @@ app.secret_key = 'Khizar@Dev2024'
 ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD', 'Khizar@Admin2024')
 
 DB_CONFIG = {
-    'host': os.environ.get('MYSQL_HOST'),
-    'user': os.environ.get('MYSQL_USER'),
-    'password': os.environ.get('MYSQL_PASSWORD'),
-    'database': os.environ.get('MYSQL_DATABASE'),
-    'port': int(os.environ.get('MYSQL_PORT', 3306))
+    'host': os.environ.get('MYSQL_HOST') or os.environ.get('MYSQLHOST'),
+    'user': os.environ.get('MYSQL_USER') or os.environ.get('MYSQLUSER'),
+    'password': os.environ.get('MYSQL_PASSWORD') or os.environ.get('MYSQLPASSWORD'),
+    'database': os.environ.get('MYSQL_DATABASE') or os.environ.get('MYSQLDATABASE'),
+    'port': int(os.environ.get('MYSQL_PORT') or os.environ.get('MYSQLPORT') or 3306)
 }
 
 def get_db():
