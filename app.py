@@ -243,6 +243,22 @@ def admin_delete_url(id):
     conn.close()
     return jsonify({'success': True})
 
+@app.route('/reset-db')
+def reset_db():
+    conn = get_db()
+    if conn:
+        cursor = conn.cursor()
+        # Drop the old tables
+        cursor.execute("DROP TABLE IF EXISTS url_clicks")
+        cursor.execute("DROP TABLE IF EXISTS short_urls")
+        conn.commit()
+        conn.close()
+        
+        # Re-create them with the new session_id column
+        init_db() 
+        return "Database reset successful! You can now use the app."
+    return "Failed to connect to database."
+    
 init_db()
 
 if __name__ == '__main__':
