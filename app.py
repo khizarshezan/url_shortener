@@ -11,11 +11,11 @@ app.secret_key = 'Khizar@Dev2024'
 
 import os
 DB_CONFIG = {
-    'host': os.environ.get('MYSQL_HOST'),
-    'user': os.environ.get('MYSQL_USER'),
-    'password': os.environ.get('MYSQL_PASSWORD'),
-    'database': os.environ.get('MYSQL_DATABASE'),
-    'port': int(os.environ.get('MYSQL_PORT', 3306))
+    'host': os.environ.get('MYSQLHOST'),
+    'user': os.environ.get('MYSQLUSER'),
+    'password': os.environ.get('MYSQLPASSWORD'),
+    'database': os.environ.get('MYSQLDATABASE'),
+    'port': int(os.environ.get('MYSQLPORT', 3306))
 }
 
 def get_db():
@@ -135,5 +135,6 @@ def delete_url(id):
     conn.close()
     return jsonify({'success': True})
 
+init_db()
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
