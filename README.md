@@ -18,9 +18,5 @@ A full-stack URL shortening web application that tracks click counts, timestamps
 - **MySQL** — Data storage
 - **Bootstrap** — Frontend styling
 
-## How to Run
-1. Start MySQL service
-2. Run `python app.py`
-3. Open `http://localhost:5000`
-4. Enter any URL and click Shorten
-5. Share the short link — clicks are tracked automatically
+## link
+- https://kzr.up.railway.app
